@@ -1,0 +1,18 @@
+{
+  "name": "2024-t0010-si05-g03",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r <a href= \"https://www.inteli.edu.br/\"><img src=\"assets/inteli.png\" alt=\"Inteli - Instituto de Tecnologia e Liderança\" border=\"0\" width=40% height=40%></a>\r </p>",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}

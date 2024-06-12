@@ -1,0 +1,25 @@
+# Integração entre Smart Contract e Front-end
+shape: sequence_diagram
+
+# Ator: User
+User -> Front-End: 1. Interage com a plataforma
+
+# Smart Contract (implícito na Blockchain)
+Front-End -> Smart-Contract: 2. Envia transações e consulta dados
+Smart-Contract -> API: 2.1 Solicita consulta de saldo do usuário
+API -> SQLite: 2.2 Consulta saldo do usuário
+SQLite -> API: 2.1 Retorna saldo do usuário
+API -> Smart-Contract: 2.4 Saldo do usuário
+Smart-Contract -> Front-End: 2.5 Retorna saldo do usuário
+
+Front-End -> Smart-Contract: 3. Solicita início de transação de envio de tokens
+Smart-Contract -> Front-End: 4. Solicita assinatura digital
+Front-End -> MetaMask: 4.1 Exibe solicitação de assinatura
+MetaMask -> Front-End: 4.2 Confirma assinatura
+Front-End -> Smart-Contract: 4.3 Confirmação de assinatura
+Smart-Contract -> API: 5. Registra transação
+API -> SQLite: 6. Atualiza saldo
+SQLite -> API: 6.1 Confirmação de atualização
+API -> Smart-Contract: 7. Confirmação de transação
+Smart-Contract -> Front-End: 7.1 Transação concluída
+Front-End -> User: 8. Exibe mensagem de sucesso

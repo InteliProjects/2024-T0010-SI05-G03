@@ -1,0 +1,354 @@
+{
+  "address": "0x0876e242F1F141E1FDf23A8D046a9aaA43855126",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "message",
+          "type": "string"
+        }
+      ],
+      "name": "LogTransaction",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_walletCompany",
+          "type": "address"
+        }
+      ],
+      "name": "LogUserRegistration",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "getAllTransactions",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "productId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "valueTimesOneHundred",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "stateId",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct FairLink.Transaction[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllUsers",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_sender",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_productId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_valueTimesOneHundred",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_timestamp",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_stateId",
+          "type": "uint256"
+        }
+      ],
+      "name": "transactionRegister",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_walletCompany",
+          "type": "address"
+        }
+      ],
+      "name": "userRegister",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "users",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xaa791a61bb6a80656540439043e78aa183d48abfbb8669ed4eb67896bfef21ba",
+  "receipt": {
+    "to": null,
+    "from": "0x1DDD4E493a953C2fE36442075CB0cf7Fac7918C2",
+    "contractAddress": "0x0876e242F1F141E1FDf23A8D046a9aaA43855126",
+    "transactionIndex": 151,
+    "gasUsed": "460504",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x4cec5e45c4d0e8592088d99bedae66f0ee6e697c0a59c1c01bf7dab3e8e67838",
+    "transactionHash": "0xaa791a61bb6a80656540439043e78aa183d48abfbb8669ed4eb67896bfef21ba",
+    "logs": [],
+    "blockNumber": 5486476,
+    "cumulativeGasUsed": "24397336",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 3,
+  "solcInputHash": "384bb0c2016c6be489d8c56e27d4e4a8",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"}],\"name\":\"LogTransaction\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_walletCompany\",\"type\":\"address\"}],\"name\":\"LogUserRegistration\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"getAllTransactions\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"productId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"valueTimesOneHundred\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"stateId\",\"type\":\"uint256\"}],\"internalType\":\"struct FairLink.Transaction[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllUsers\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_receiver\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_productId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_valueTimesOneHundred\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_timestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_stateId\",\"type\":\"uint256\"}],\"name\":\"transactionRegister\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_walletCompany\",\"type\":\"address\"}],\"name\":\"userRegister\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"users\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/FairLink.sol\":\"FairLink\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/FairLink.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity >=0.4.0;\\n\\ncontract FairLink{\\n\\n    // Estrutura de transa\\u00e7\\u00e3o\\n\\n    struct Transaction {\\n\\n        address sender;\\n\\n        address receiver;\\n\\n        uint256 productId;\\n\\n        uint256 valueTimesOneHundred;\\n\\n        uint256 timestamp;\\n\\n        uint256 stateId;\\n\\n    }\\n\\n\\n\\n    // Lista de transa\\u00e7\\u00f5es\\n\\n    Transaction[] private transactionStorical;\\n\\n\\n\\n    // Lista de usu\\u00e1rios\\n\\n    address[] private allUsers;\\n\\n\\n\\n    // Declara\\u00e7\\u00e3o do owner\\n\\n    address public owner;\\n\\n\\n\\n    // Eventos que ser\\u00e3o acionados nas fun\\u00e7\\u00f5es de registro\\n\\n    event LogUserRegistration(string message, address _walletCompany);\\n\\n    event LogTransaction(string message);\\n\\n\\n\\n    // Construtor para armazenas na vari\\u00e1vel owner o endere\\u00e7o de quem fez a deploy (Alliance)\\n\\n    constructor() {\\n\\n        owner = msg.sender;\\n\\n    }\\n\\n\\n\\n    // Modifier para checar se o usu\\u00e1rio atual do contrato \\u00e9 o owner\\n\\n    modifier onlyAlliance() {\\n\\n        require(msg.sender == owner, \\\"Not an owner\\\");\\n\\n        _;\\n\\n    }\\n\\n\\n\\n    // Tabela mapping para endere\\u00e7os de usu\\u00e1rios apontando com booleano (True e False)\\n\\n    mapping(address => bool) public users;\\n\\n\\n\\n    // Requisito de Neg\\u00f3cio 1: Cadastro de Usu\\u00e1rio\\n\\n    function userRegister(address _walletCompany) external returns (bool) {\\n\\n        // Verifica se o usu\\u00e1rio est\\u00e1 registrado\\n\\n        if (users[_walletCompany]) {\\n\\n            // Retornamos false pois o usu\\u00e1rio j\\u00e1 est\\u00e1 cadastrado.\\n\\n            return false;\\n\\n        }\\n\\n        \\n\\n        // Aponta true para o endere\\u00e7o do usu\\u00e1rio\\n\\n        users[_walletCompany] = true;\\n\\n\\n\\n        // Envia o novo usu\\u00e1rio para a lista de usu\\u00e1rios\\n\\n        allUsers.push(_walletCompany);\\n\\n\\n\\n        // Emite evento de usu\\u00e1rio registrado\\n\\n        emit LogUserRegistration(\\\"User successfully registered.\\\", _walletCompany);\\n\\n\\n\\n        return true;\\n\\n    }\\n\\n\\n\\n    // Requisito de Neg\\u00f3cio 2: Registro de Transa\\u00e7\\u00e3o\\n\\n    function transactionRegister(address _sender, address _receiver, uint256 _productId, uint256 _valueTimesOneHundred, uint256 _timestamp, uint256 _stateId) external returns (bool) {        \\n\\n        // Verifica\\u00e7\\u00f5es antes de registrar a transa\\u00e7\\u00e3o \\n\\n        // Os usu\\u00e1rios (receiver e sender) precisam estar na lista de usu\\u00e1rios e precisam ser diferentes\\n\\n        if (users[_sender] && users[_receiver] && _sender != _receiver) {\\n\\n            // Cria um struct Transaction e o adiciona \\u00e0 lista transactionStorical\\n\\n            transactionStorical.push(Transaction({\\n\\n                sender: _sender,\\n\\n                receiver: _receiver,\\n\\n                productId: _productId,\\n\\n                valueTimesOneHundred: _valueTimesOneHundred,\\n\\n                timestamp: _timestamp,\\n\\n                stateId: _stateId\\n\\n            }));\\n\\n\\n\\n            // Emite evento de Transa\\u00e7\\u00e3o Registrada Com Sucesso\\n\\n            emit LogTransaction(\\\"Transaction successfuly completed.\\\");\\n\\n            \\n\\n            // Retorna true para indicar sucesso\\n\\n            return true;\\n\\n        }\\n\\n        // Retorna false para indicar insucesso\\n\\n        return false; \\n\\n    }\\n\\n\\n\\n    // Requisito de neg\\u00f3cio 3: Servi\\u00e7os de Consulta\\n\\n    // Devolve todos os registros de transa\\u00e7\\u00f5es realizados\\n\\n    function getAllTransactions() external view returns(Transaction[] memory) {\\n\\n        return transactionStorical;\\n\\n    }\\n\\n    \\n\\n    // Devolve todos os usu\\u00e1rios cadastrados\\n\\n    function getAllUsers() external view returns(address[] memory){\\n\\n        return allUsers;\\n\\n    }\\n\\n}\",\"keccak256\":\"0xd43ea8e3e9d3456240de4f6c3111c6d62212af752e5de58871b65ba149b7e356\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50600280546001600160a01b031916331790556106f5806100326000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c806327506f531461006757806353162558146100855780638da5cb5b146100a8578063a87430ba146100d3578063d95dba2e146100f6578063e2842d7914610109575b600080fd5b61006f61011e565b60405161007c919061055b565b60405180910390f35b6100986100933660046105fb565b6101c1565b604051901515815260200161007c565b6002546100bb906001600160a01b031681565b6040516001600160a01b03909116815260200161007c565b6100986100e13660046105fb565b60036020526000908152604090205460ff1681565b61009861010436600461061d565b6102bc565b6101116104f9565b60405161007c9190610672565b60606000805480602002602001604051908101604052809291908181526020016000905b828210156101b85760008481526020908190206040805160c0810182526006860290920180546001600160a01b0390811684526001808301549091168486015260028201549284019290925260038101546060840152600481015460808401526005015460a08301529083529092019101610142565b50505050905090565b6001600160a01b03811660009081526003602052604081205460ff16156101ea57506000919050565b6001600160a01b03821660008181526003602090815260408083208054600160ff1990911681179091558054808201825593527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf690920180546001600160a01b031916841790558151828152601d818401527f55736572207375636365737366756c6c7920726567697374657265642e000000606082015290810192909252517fa5737243ad2a63f93dbac435a5f66d770bf374105dda592a809ca41e376f76559181900360800190a1506001919050565b6001600160a01b03861660009081526003602052604081205460ff1680156102fc57506001600160a01b03861660009081526003602052604090205460ff165b801561031a5750856001600160a01b0316876001600160a01b031614155b156104eb576040805160c0810182526001600160a01b03808a16825288811660208301908152828401898152606084018981526080850189815260a0860189815260008054600181018255908052965160069097027f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563810180549888166001600160a01b0319998a1617905594517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e564860180549190971697169690961790945590517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e565830155517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56682015590517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56782015590517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56890910155517f0cd5345676058e46942e7508eed8b4632ef47d35248241a67167feb1a72c144c906104db9060208082526022908201527f5472616e73616374696f6e207375636365737366756c7920636f6d706c657465604082015261321760f11b606082015260800190565b60405180910390a15060016104ef565b5060005b9695505050505050565b6060600180548060200260200160405190810160405280929190818152602001828054801561055157602002820191906000526020600020905b81546001600160a01b03168152600190910190602001808311610533575b5050505050905090565b602080825282518282018190526000919060409081850190868401855b828110156105d257815180516001600160a01b0390811686528782015116878601528581015186860152606080820151908601526080808201519086015260a0908101519085015260c09093019290850190600101610578565b5091979650505050505050565b80356001600160a01b03811681146105f657600080fd5b919050565b60006020828403121561060d57600080fd5b610616826105df565b9392505050565b60008060008060008060c0878903121561063657600080fd5b61063f876105df565b955061064d602088016105df565b95989597505050506040840135936060810135936080820135935060a0909101359150565b6020808252825182820181905260009190848201906040850190845b818110156106b35783516001600160a01b03168352928401929184019160010161068e565b5090969550505050505056fea2646970667358221220dd16f7355119cd021e93a4c21107a0580a2819cf0d6c9ab52911b3aa0851a3e864736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c806327506f531461006757806353162558146100855780638da5cb5b146100a8578063a87430ba146100d3578063d95dba2e146100f6578063e2842d7914610109575b600080fd5b61006f61011e565b60405161007c919061055b565b60405180910390f35b6100986100933660046105fb565b6101c1565b604051901515815260200161007c565b6002546100bb906001600160a01b031681565b6040516001600160a01b03909116815260200161007c565b6100986100e13660046105fb565b60036020526000908152604090205460ff1681565b61009861010436600461061d565b6102bc565b6101116104f9565b60405161007c9190610672565b60606000805480602002602001604051908101604052809291908181526020016000905b828210156101b85760008481526020908190206040805160c0810182526006860290920180546001600160a01b0390811684526001808301549091168486015260028201549284019290925260038101546060840152600481015460808401526005015460a08301529083529092019101610142565b50505050905090565b6001600160a01b03811660009081526003602052604081205460ff16156101ea57506000919050565b6001600160a01b03821660008181526003602090815260408083208054600160ff1990911681179091558054808201825593527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf690920180546001600160a01b031916841790558151828152601d818401527f55736572207375636365737366756c6c7920726567697374657265642e000000606082015290810192909252517fa5737243ad2a63f93dbac435a5f66d770bf374105dda592a809ca41e376f76559181900360800190a1506001919050565b6001600160a01b03861660009081526003602052604081205460ff1680156102fc57506001600160a01b03861660009081526003602052604090205460ff165b801561031a5750856001600160a01b0316876001600160a01b031614155b156104eb576040805160c0810182526001600160a01b03808a16825288811660208301908152828401898152606084018981526080850189815260a0860189815260008054600181018255908052965160069097027f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563810180549888166001600160a01b0319998a1617905594517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e564860180549190971697169690961790945590517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e565830155517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56682015590517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56782015590517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56890910155517f0cd5345676058e46942e7508eed8b4632ef47d35248241a67167feb1a72c144c906104db9060208082526022908201527f5472616e73616374696f6e207375636365737366756c7920636f6d706c657465604082015261321760f11b606082015260800190565b60405180910390a15060016104ef565b5060005b9695505050505050565b6060600180548060200260200160405190810160405280929190818152602001828054801561055157602002820191906000526020600020905b81546001600160a01b03168152600190910190602001808311610533575b5050505050905090565b602080825282518282018190526000919060409081850190868401855b828110156105d257815180516001600160a01b0390811686528782015116878601528581015186860152606080820151908601526080808201519086015260a0908101519085015260c09093019290850190600101610578565b5091979650505050505050565b80356001600160a01b03811681146105f657600080fd5b919050565b60006020828403121561060d57600080fd5b610616826105df565b9392505050565b60008060008060008060c0878903121561063657600080fd5b61063f876105df565b955061064d602088016105df565b95989597505050506040840135936060810135936080820135935060a0909101359150565b6020808252825182820181905260009190848201906040850190845b818110156106b35783516001600160a01b03168352928401929184019160010161068e565b5090969550505050505056fea2646970667358221220dd16f7355119cd021e93a4c21107a0580a2819cf0d6c9ab52911b3aa0851a3e864736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 18,
+        "contract": "contracts/FairLink.sol:FairLink",
+        "label": "transactionStorical",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_array(t_struct(Transaction)14_storage)dyn_storage"
+      },
+      {
+        "astId": 21,
+        "contract": "contracts/FairLink.sol:FairLink",
+        "label": "allUsers",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_array(t_address)dyn_storage"
+      },
+      {
+        "astId": 23,
+        "contract": "contracts/FairLink.sol:FairLink",
+        "label": "owner",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_address"
+      },
+      {
+        "astId": 58,
+        "contract": "contracts/FairLink.sol:FairLink",
+        "label": "users",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_address,t_bool)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_array(t_struct(Transaction)14_storage)dyn_storage": {
+        "base": "t_struct(Transaction)14_storage",
+        "encoding": "dynamic_array",
+        "label": "struct FairLink.Transaction[]",
+        "numberOfBytes": "32"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_struct(Transaction)14_storage": {
+        "encoding": "inplace",
+        "label": "struct FairLink.Transaction",
+        "members": [
+          {
+            "astId": 3,
+            "contract": "contracts/FairLink.sol:FairLink",
+            "label": "sender",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address"
+          },
+          {
+            "astId": 5,
+            "contract": "contracts/FairLink.sol:FairLink",
+            "label": "receiver",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address"
+          },
+          {
+            "astId": 7,
+            "contract": "contracts/FairLink.sol:FairLink",
+            "label": "productId",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 9,
+            "contract": "contracts/FairLink.sol:FairLink",
+            "label": "valueTimesOneHundred",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 11,
+            "contract": "contracts/FairLink.sol:FairLink",
+            "label": "timestamp",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 13,
+            "contract": "contracts/FairLink.sol:FairLink",
+            "label": "stateId",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "192"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

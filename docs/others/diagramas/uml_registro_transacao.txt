@@ -1,0 +1,19 @@
+sequence "Registro da Transação da Cotação": {
+  shape: sequence_diagram
+  UserA -> Front-End: "1-Inicia a transação"
+  Front-End -> Back-end: "2-Envia a solicitação"
+  Back-end -> UserB: "3-Envia solicitação"
+  UserB -> Back-end: "4-Validou a transação"
+  Back-end -> Smart-Contract: "5-Envia o registro de transação"
+  Smart-Contract -> Smart-Contract: "6-Processa e Registra"
+
+  sucess: {
+    Smart-Contract -> Front-End: "Transação Registrada com sucesso"
+  }
+  unregistered user: {
+    Smart-Contract -> Front-End: "Transação Não Registrada"
+  }
+  A and B are the same: {
+    Smart-Contract -> Front-End: "Transação Não Registrada"
+  }
+}

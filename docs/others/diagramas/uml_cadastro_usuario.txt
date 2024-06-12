@@ -1,0 +1,18 @@
+"Cadastro do Comprador e Vendedor (Usuário)": {
+  shape: sequence_diagram
+  Alliance -> FrontEnd: "1. Alliance cadastra wallet das empresas"
+  User
+  FrontEnd -> Backend: "2. Envia dados cadastrados para o banco de dados"
+  Backend -> SmartContract: "3. Aciona função: UserRegister do Smart-Contract"
+
+  Not An Owner: {
+    SmartContract -> FrontEnd: "4.1. Recusa o cadastro"
+    FrontEnd -> User: "4.2. Retorna PopUp: ”Not an Owner”"
+  }
+
+  Owner: {
+    SmartContract -> FrontEnd: "5.1. Aceita o cadastro"
+    SmartContract -> SmartContract: "5.2. Realiza Função UserRegister"
+    FrontEnd -> Alliance: "5.3. Retorna PopUp: “User successfully registered”"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/FairLink.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.0;\r\n\r\ncontract FairLink{\r\n\r\n    // Estrutura de transação\r\n\r\n    struct Transaction {\r\n\r\n        address sender;\r\n\r\n        address receiver;\r\n\r\n        uint256 productId;\r\n\r\n        uint256 valueTimesOneHundred;\r\n\r\n        uint256 timestamp;\r\n\r\n        uint256 stateId;\r\n\r\n    }\r\n\r\n\r\n\r\n    // Lista de transações\r\n\r\n    Transaction[] private transactionStorical;\r\n\r\n\r\n\r\n    // Lista de usuários\r\n\r\n    address[] private allUsers;\r\n\r\n\r\n\r\n    // Declaração do owner\r\n\r\n    address public owner;\r\n\r\n\r\n\r\n    // Eventos que serão acionados nas funções de registro\r\n\r\n    event LogUserRegistration(string message, address _walletCompany);\r\n\r\n    event LogTransaction(string message);\r\n\r\n\r\n\r\n    // Construtor para armazenas na variável owner o endereço de quem fez a deploy (Alliance)\r\n\r\n    constructor() {\r\n\r\n        owner = msg.sender;\r\n\r\n    }\r\n\r\n\r\n\r\n    // Modifier para checar se o usuário atual do contrato é o owner\r\n\r\n    modifier onlyAlliance() {\r\n\r\n        require(msg.sender == owner, \"Not an owner\");\r\n\r\n        _;\r\n\r\n    }\r\n\r\n\r\n\r\n    // Tabela mapping para endereços de usuários apontando com booleano (True e False)\r\n\r\n    mapping(address => bool) public users;\r\n\r\n\r\n\r\n    // Requisito de Negócio 1: Cadastro de Usuário\r\n\r\n    function userRegister(address _walletCompany) external onlyAlliance() returns (bool) {\r\n\r\n        // Verifica se o usuário está registrado\r\n\r\n        if (users[_walletCompany]) {\r\n\r\n            // Retornamos false pois o usuário já está cadastrado.\r\n\r\n            return false;\r\n\r\n        }\r\n\r\n        \r\n\r\n        // Aponta true para o endereço do usuário\r\n\r\n        users[_walletCompany] = true;\r\n\r\n\r\n\r\n        // Envia o novo usuário para a lista de usuários\r\n\r\n        allUsers.push(_walletCompany);\r\n\r\n\r\n\r\n        // Emite evento de usuário registrado\r\n\r\n        emit LogUserRegistration(\"User successfully registered.\", _walletCompany);\r\n\r\n\r\n\r\n        return true;\r\n\r\n    }\r\n\r\n\r\n\r\n    // Requisito de Negócio 2: Registro de Transação\r\n\r\n    function transactionRegister(address _sender, address _receiver, uint256 _productId, uint256 _valueTimesOneHundred, uint256 _timestamp, uint256 _stateId) external returns (bool) {        \r\n\r\n        // Verificações antes de registrar a transação \r\n\r\n        // Os usuários (receiver e sender) precisam estar na lista de usuários e precisam ser diferentes\r\n\r\n        if (users[_sender] && users[_receiver] && _sender != _receiver) {\r\n\r\n            // Cria um struct Transaction e o adiciona à lista transactionStorical\r\n\r\n            transactionStorical.push(Transaction({\r\n\r\n                sender: _sender,\r\n\r\n                receiver: _receiver,\r\n\r\n                productId: _productId,\r\n\r\n                valueTimesOneHundred: _valueTimesOneHundred,\r\n\r\n                timestamp: _timestamp,\r\n\r\n                stateId: _stateId\r\n\r\n            }));\r\n\r\n\r\n\r\n            // Emite evento de Transação Registrada Com Sucesso\r\n\r\n            emit LogTransaction(\"Transaction successfuly completed.\");\r\n\r\n            \r\n\r\n            // Retorna true para indicar sucesso\r\n\r\n            return true;\r\n\r\n        }\r\n\r\n        // Retorna false para indicar insucesso\r\n\r\n        return false; \r\n\r\n    }\r\n\r\n\r\n\r\n    // Requisito de negócio 3: Serviços de Consulta\r\n\r\n    // Devolve todos os registros de transações realizados\r\n\r\n    function getAllTransactions() external view returns(Transaction[] memory) {\r\n\r\n        return transactionStorical;\r\n\r\n    }\r\n\r\n    \r\n\r\n    // Devolve todos os usuários cadastrados\r\n\r\n    function getAllUsers() external view returns(address[] memory){\r\n\r\n        return allUsers;\r\n\r\n    }\r\n\r\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

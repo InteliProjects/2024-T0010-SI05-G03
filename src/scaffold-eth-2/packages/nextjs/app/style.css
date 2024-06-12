@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.keen-slider {
+    height: 100vh;
+    width: 100%;
+}
+
+.keen-slider__slide {
+    height: 100vh; 
+    width: 100%; 
+    overflow: hidden;
+    position: relative;
+}
+
+
+[class^="number-slide"],
+[class*=" number-slide"] {
+    background: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #fff;
+    font-weight: 500;
+}
+.conteudo{
+    width: 50%;
+}
+h1{
+    color: #02f23e;
+    margin-bottom: 2rem;
+}
+
+.preto{
+    color: #fff;
+}
+
+p{
+    color: #212638;
+    font-size: 2rem;
+}
+
+.number-slide1 {
+    background: #fff;
+}
+
+.number-slide2 {
+    background: #02f23e;
+    background: linear-gradient(128deg,
+    #02f23e 0%,
+    #3ce466c0 100%);
+}
+
+.number-slide3 {
+    background: #10892e;
+    background: linear-gradient(128deg,
+    #00ff40 0%,
+    #3ce466c0 100%);
+}

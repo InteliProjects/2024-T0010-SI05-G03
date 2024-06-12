@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/FairLink.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.0;\n\ncontract FairLink{\n\n    // Estrutura de transação\n\n    struct Transaction {\n\n        address sender;\n\n        address receiver;\n\n        uint256 productId;\n\n        uint256 valueTimesOneHundred;\n\n        uint256 timestamp;\n\n        uint256 stateId;\n\n    }\n\n\n\n    // Lista de transações\n\n    Transaction[] private transactionStorical;\n\n\n\n    // Lista de usuários\n\n    address[] private allUsers;\n\n\n\n    // Declaração do owner\n\n    address public owner;\n\n\n\n    // Eventos que serão acionados nas funções de registro\n\n    event LogUserRegistration(string message, address _walletCompany);\n\n    event LogTransaction(string message);\n\n\n\n    // Construtor para armazenas na variável owner o endereço de quem fez a deploy (Alliance)\n\n    constructor() {\n\n        owner = msg.sender;\n\n    }\n\n\n\n    // Modifier para checar se o usuário atual do contrato é o owner\n\n    modifier onlyAlliance() {\n\n        require(msg.sender == owner, \"Not an owner\");\n\n        _;\n\n    }\n\n\n\n    // Tabela mapping para endereços de usuários apontando com booleano (True e False)\n\n    mapping(address => bool) public users;\n\n\n\n    // Requisito de Negócio 1: Cadastro de Usuário\n\n    function userRegister(address _walletCompany) external returns (bool) {\n\n        // Verifica se o usuário está registrado\n\n        if (users[_walletCompany]) {\n\n            // Retornamos false pois o usuário já está cadastrado.\n\n            return false;\n\n        }\n\n        \n\n        // Aponta true para o endereço do usuário\n\n        users[_walletCompany] = true;\n\n\n\n        // Envia o novo usuário para a lista de usuários\n\n        allUsers.push(_walletCompany);\n\n\n\n        // Emite evento de usuário registrado\n\n        emit LogUserRegistration(\"User successfully registered.\", _walletCompany);\n\n\n\n        return true;\n\n    }\n\n\n\n    // Requisito de Negócio 2: Registro de Transação\n\n    function transactionRegister(address _sender, address _receiver, uint256 _productId, uint256 _valueTimesOneHundred, uint256 _timestamp, uint256 _stateId) external returns (bool) {        \n\n        // Verificações antes de registrar a transação \n\n        // Os usuários (receiver e sender) precisam estar na lista de usuários e precisam ser diferentes\n\n        if (users[_sender] && users[_receiver] && _sender != _receiver) {\n\n            // Cria um struct Transaction e o adiciona à lista transactionStorical\n\n            transactionStorical.push(Transaction({\n\n                sender: _sender,\n\n                receiver: _receiver,\n\n                productId: _productId,\n\n                valueTimesOneHundred: _valueTimesOneHundred,\n\n                timestamp: _timestamp,\n\n                stateId: _stateId\n\n            }));\n\n\n\n            // Emite evento de Transação Registrada Com Sucesso\n\n            emit LogTransaction(\"Transaction successfuly completed.\");\n\n            \n\n            // Retorna true para indicar sucesso\n\n            return true;\n\n        }\n\n        // Retorna false para indicar insucesso\n\n        return false; \n\n    }\n\n\n\n    // Requisito de negócio 3: Serviços de Consulta\n\n    // Devolve todos os registros de transações realizados\n\n    function getAllTransactions() external view returns(Transaction[] memory) {\n\n        return transactionStorical;\n\n    }\n\n    \n\n    // Devolve todos os usuários cadastrados\n\n    function getAllUsers() external view returns(address[] memory){\n\n        return allUsers;\n\n    }\n\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+"Get All Transactions/Users": {
+  shape: sequence_diagram
+  Alliance -> Front-End: "1. Solicita dados de transação ou users"
+  Back-End
+  Smart-Contract
+  Transações: {
+    Front-End -> Back-End: "2.1. Solicita dados de Transações"
+    Back-End -> Smart-Contract: "2.2. Envia requisição dos dados"
+    Smart-Contract -> Smart-Contract: "2.3. Realiza função GetAllTransactions"
+    Smart-Contract -> Back-End: "2.4. Retorna storical das Transações"
+    Back-End -> Front-End: "2.5. Retorna storical das Transações"
+    Front-End -> Alliance: "2.6. Visualização de storical das Transações"
+  }
+  Users: {
+    Front-End -> Back-End: "3.1. Solicita dados de Users"
+    Back-End -> Smart-Contract: "3.2. Envia requisição dos Dados"
+    Smart-Contract -> Smart-Contract: "3.3. Realiza função GetAllUsers"
+    Smart-Contract -> Back-End: "3.4. Retorna storical dos Users"
+    Back-End -> Front-End: "3.5. Retorna storical dos Users"
+    Front-End -> Alliance: "3.6. Visualização de storical dos Users"
+  }
+}
